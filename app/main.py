@@ -43,6 +43,10 @@ class FormData(BaseModel):
     # Optional: Add validation for phone number format
     # You can enhance this with a regex if needed
 
+@app.get("/")
+async def read_root():
+    return {"message": "Hello, FastAPI is working!"}
+
 @app.post("/submit_form")
 async def submit_form(form_data: FormData):
     # Check if required fields are present
